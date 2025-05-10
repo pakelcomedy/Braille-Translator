@@ -1,17 +1,22 @@
+// js/i18n.js — Handles loading & applying translations
 (() => {
   const DEFAULT_LANG = 'en';
   const STORAGE_KEY  = 'lang';
-  // — no leading slash, so always relative to your current page
-  const DICT_FOLDER  = 'assets/lang/';
+  const DICT_FOLDER  = '/assets/lang/';      // ← ensure trailing slash
   const DATA_ATTR    = 'data-i18n';
   const PLACEHOLDER  = 'data-i18n-placeholder';
 
+  // 1) Keep a map of all loaded dictionaries
   const cache = new Map();
+  let currentLang = null;
 
   const dictUrl = lang => `${DICT_FOLDER}${lang}.json`;
 
   async function fetchDict(lang) {
-    if (cache.has(lang)) return cache.get(lang);
+    if (cache.has(lang)) {
+      return cache.get(lang);
+    }
+
     try {
       const res = await fetch(dictUrl(lang), { cache: 'no-cache' });
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
@@ -22,9 +27,10 @@
     } catch (err) {
       console.warn(`i18n: failed to load "${lang}" (${err.message})`);
       if (lang !== DEFAULT_LANG) {
+        // fallback once
         return await fetchDict(DEFAULT_LANG);
       }
-      return {};
+      return {}; // ultimate fallback
     }
   }
 
@@ -48,6 +54,7 @@
     applyPlaceholder(dict);
     document.documentElement.lang = lang;
     localStorage.setItem(STORAGE_KEY, lang);
+    currentLang = lang;
   }
 
   document.addEventListener('DOMContentLoaded', () => {
