@@ -37,8 +37,10 @@ braille-translator-website/
 │   └── accessibility.js        # Toggle high-contrast mode
 ├── img/
 │   └── braille-examples/       # Optional: Braille image assets
-├── assets/
-│   └── fonts/                  # Optional: Custom fonts
+└── assets/
+│   └── lang/
+│       ├── en.json
+│       └── id.json
 ├── data/
 │   └── braille-map.json        # Optional: external character mapping
 ├── README.md                  # Project documentation
