@@ -22,21 +22,21 @@
   <main>
     <section aria-labelledby="input-label">
       <h2 id="input-label">Masukkan Teks</h2>
-      <textarea id="text-input" aria-label="Input teks biasa" rows="6" placeholder="Tulis teks di sini..."></textarea>
-
-      <div class="controls">
-        <label for="mode-select">Mode Output:</label>
-        <select id="mode-select">
-          <option value="unicode">Braille Unicode</option>
-          <option value="dots">Gambar Titik Braille</option>
-          <option value="6dot">6-dot CSS Grid</option>
-        </select>
-      </div>
+      <textarea
+        id="text-input"
+        aria-label="Input teks biasa"
+        rows="6"
+        placeholder="Tulis teks di sini..."
+      ></textarea>
     </section>
 
     <section aria-labelledby="output-label">
       <h2 id="output-label">Hasil Konversi</h2>
-      <div id="braille-output" class="output-area" aria-live="polite"></div>
+      <div
+        id="braille-output"
+        class="output-area"
+        aria-live="polite"
+      ></div>
       <div class="output-buttons">
         <button id="copy-btn">Salin</button>
         <button id="download-btn">Unduh</button>
@@ -45,10 +45,13 @@
   </main>
 
   <footer>
-    <button id="accessibility-toggle" aria-pressed="false">
+    <button
+      id="accessibility-toggle"
+      aria-pressed="false"
+      aria-label="Aktifkan mode aksesibilitas tinggi"
+    >
       Mode Aksesibilitas Tinggi
     </button>
-    <p>&copy; 2025 Penerjemah Braille. Dibuat dengan ❤️ untuk aksesibilitas.</p>
   </footer>
 
   <script src="js/convert.js"></script>

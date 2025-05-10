@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Belajar Braille - Penerjemah Braille</title>
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+  <header>
+    <h1>Belajar Braille</h1>
+    <nav>
+      <ul>
+        <li><a href="../index.html">Beranda</a></li>
+        <li><a href="reverse.html">Braille ke Teks</a></li>
+        <li><a href="upload.html">Unggah Dokumen</a></li>
+        <li><a href="learn.html" aria-current="page">Belajar Braille</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Sejarah Braille -->
+    <section aria-labelledby="sejarah-label">
+      <h2 id="sejarah-label">Sejarah Braille</h2>
+      <p>Braille dikembangkan oleh Louis Braille pada awal abad ke-19 sebagai sistem membaca dan menulis untuk tunanetra.</p>
+    </section>
+
+    <!-- Tabel Alfabet Braille -->
+    <section aria-labelledby="alfabet-label">
+      <h2 id="alfabet-label">Alfabet Braille</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Huruf</th>
+            <th>Simbol Braille</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>A</td><td>&#x2801;</td></tr>
+          <tr><td>B</td><td>&#x2803;</td></tr>
+          <tr><td>C</td><td>&#x2809;</td></tr>
+          <tr><td>D</td><td>&#x2819;</td></tr>
+          <tr><td>E</td><td>&#x2811;</td></tr>
+          <tr><td>F</td><td>&#x280B;</td></tr>
+          <tr><td>G</td><td>&#x281B;</td></tr>
+          <tr><td>H</td><td>&#x2813;</td></tr>
+          <tr><td>I</td><td>&#x280A;</td></tr>
+          <tr><td>J</td><td>&#x281A;</td></tr>
+          <!-- Tambahkan huruf lainnya sesuai kebutuhan -->
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Cara Membaca Braille -->
+    <section aria-labelledby="cara-label">
+      <h2 id="cara-label">Cara Membaca Braille</h2>
+      <ol>
+        <li>Posisikan ujung jari secara lembut pada permukaan tekstur.</li>
+        <li>Gulir ujung jari dari kiri ke kanan untuk mengenali pola titik.</li>
+        <li>Latih secara rutin untuk meningkatkan kecepatan membaca.</li>
+      </ol>
+    </section>
+
+    <!-- Kuis Interaktif -->
+    <section aria-labelledby="kuis-label">
+      <h2 id="kuis-label">Kuis Singkat</h2>
+      <p>Cocokkan huruf dengan simbol Braille berikut:</p>
+      <ul>
+        <li>A: ____</li>
+        <li>B: ____</li>
+        <li>C: ____</li>
+      </ul>
+      <p>(Kuis belum interaktif, bisa dikembangkan dengan JavaScript)</p>
+    </section>
+  </main>
+
+  <footer>
+    <button id="accessibility-toggle" aria-pressed="false">Mode Aksesibilitas Tinggi</button>
+    <p>&copy; 2025 Penerjemah Braille.</p>
+  </footer>
+
+  <script src="../js/accessibility.js"></script>
+</body>
+</html>

@@ -10,15 +10,18 @@
     --color-border: #dddddd;
     --font-family-base: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     --transition-speed: 0.2s;
+    --breakpoint-mobile: 600px;
   }
   
-  /* ========== Base Styles ========== */
+  /* ========== Base Reset & Typography ========== */
   * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
   }
-  
+  html {
+    font-size: 100%; /* 16px */
+  }
   body {
     font-family: var(--font-family-base);
     background-color: var(--color-bg);
@@ -30,42 +33,45 @@
     min-height: 100vh;
   }
   
+  /* ========== Links ========== */
   a {
     color: var(--color-primary);
     text-decoration: none;
     transition: color var(--transition-speed);
   }
-  
   a:hover,
   a:focus {
     color: var(--color-primary-hover);
   }
   
+  /* ========== Header & Navigation ========== */
   header,
   footer {
     background-color: #ffffff;
     border-bottom: 1px solid var(--color-border);
     padding: 1rem 2rem;
   }
-  
   footer {
     border-top: 1px solid var(--color-border);
     margin-top: auto;
     text-align: center;
   }
-  
-  /* ========== Header & Navigation ========== */
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
   header h1 {
     font-size: 1.75rem;
     margin-bottom: 0.5rem;
   }
-  
   nav ul {
     list-style: none;
     display: flex;
     gap: 1.5rem;
+    flex-wrap: wrap;
   }
-  
   nav ul li a[aria-current="page"] {
     font-weight: bold;
     border-bottom: 2px solid var(--color-accent);
@@ -79,16 +85,15 @@
     margin: 0 auto;
     width: 100%;
   }
-  
   section {
     margin-bottom: 2rem;
   }
-  
   section h2 {
     font-size: 1.5rem;
     margin-bottom: 0.75rem;
   }
   
+  /* ========== Form Elements & Output ========== */
   textarea {
     width: 100%;
     padding: 0.75rem;
@@ -96,23 +101,10 @@
     border-radius: 4px;
     font-size: 1rem;
     resize: vertical;
+    min-height: 150px;
   }
-  
-  .controls {
-    display: flex;
-    align-items: center;
-    margin-top: 1rem;
-    gap: 0.5rem;
-  }
-  
-  select {
-    padding: 0.5rem;
-    border: 1px solid var(--color-border);
-    border-radius: 4px;
-    font-size: 1rem;
-  }
-  
   .output-area {
+    width: 100%;
     min-height: 6rem;
     padding: 1rem;
     border: 1px dashed var(--color-border);
@@ -123,22 +115,35 @@
     word-wrap: break-word;
   }
   
+  /* ========== Controls & Buttons ========== */
+  .controls {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+  }
+  select {
+    padding: 0.5rem;
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+    font-size: 1rem;
+  }
   .output-buttons {
     display: flex;
     gap: 1rem;
+    flex-wrap: wrap;
   }
-  
   button {
     padding: 0.6rem 1.2rem;
     border: none;
     border-radius: 4px;
     cursor: pointer;
     font-size: 1rem;
-    transition: background-color var(--transition-speed);
+    transition: background-color var(--transition-speed), filter var(--transition-speed);
     background-color: var(--color-primary);
     color: #ffffff;
   }
-  
   button:hover,
   button:focus {
     background-color: var(--color-primary-hover);
@@ -147,39 +152,68 @@
   #copy-btn {
     background-color: var(--color-accent);
   }
-  
   #copy-btn:hover,
   #copy-btn:focus {
-    background-color: darken(var(--color-accent), 10%);
+    /* filter darkens by 10% without changing your original vars */
+    filter: brightness(0.9);
   }
   
-  /* Accessibility Toggle Button */
+  /* ========== Accessibility Toggle Button ========== */
   #accessibility-toggle {
     background-color: transparent;
     color: var(--color-primary);
     border: 1px solid var(--color-primary);
+    transition: background-color var(--transition-speed), color var(--transition-speed);
   }
-  
   #accessibility-toggle[aria-pressed="true"] {
     background-color: var(--color-primary);
     color: #ffffff;
   }
   
-  /* ========== Accessibility High Mode ========== */
+  /* ========== Accessibility ‑ High Mode ========== */
   .accessibility-high {
     background-color: #000000 !important;
     color: #ffffff !important;
     font-size: 1.25rem !important;
   }
-  
   .accessibility-high textarea,
   .accessibility-high .output-area {
     border-color: #ffffff !important;
   }
-  
   .accessibility-high button,
   .accessibility-high select,
   .accessibility-high input {
     outline: 3px solid #ffea00;
+  }
+  
+  /* ========== Responsive Adjustments ========== */
+  @media (max-width: var(--breakpoint-mobile)) {
+    header {
+      padding: 1rem;
+    }
+    header h1 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      width: 100%;
+      text-align: center;
+    }
+    nav ul {
+      flex-direction: column;
+      gap: 1rem;
+      width: 100%;
+      text-align: center;
+    }
+    main {
+      padding: 1rem;
+    }
+    .controls,
+    .output-buttons {
+      flex-direction: column;
+      align-items: stretch;
+    }
+    button,
+    select {
+      width: 100%;
+    }
   }
   
