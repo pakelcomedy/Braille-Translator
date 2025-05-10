@@ -2,14 +2,68 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Belajar Braille - Penerjemah Braille</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Belajar Braille — Penerjemah Braille</title>
   <link rel="stylesheet" href="../css/styles.css">
+  <style>
+    /* Additional page‑specific tweaks */
+    table.braille-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 2rem;
+    }
+    table.braille-table th,
+    table.braille-table td {
+      border: 1px solid var(--color-border);
+      padding: 0.75rem;
+      text-align: center;
+    }
+    table.braille-table th {
+      background-color: var(--color-accent);
+      color: #fff;
+      font-size: 1rem;
+    }
+    .quiz-list {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0;
+    }
+    .quiz-list li {
+      margin-bottom: 0.75rem;
+    }
+    .quiz-list input {
+      width: 4rem;
+      padding: 0.3rem;
+      font-size: 1rem;
+      text-align: center;
+      border: 1px solid var(--color-border);
+      border-radius: 4px;
+      transition: border-color var(--transition-speed);
+    }
+    .quiz-list input.correct {
+      border-color: #28a745;
+    }
+    .quiz-list input.incorrect {
+      border-color: #dc3545;
+    }
+    #check-quiz {
+      margin-top: 1rem;
+    }
+    .answer-key {
+      display: none;
+      margin-top: 1rem;
+      font-size: 0.9rem;
+      color: var(--color-text);
+    }
+    .show-key .answer-key {
+      display: block;
+    }
+  </style>
 </head>
 <body>
   <header>
     <h1>Belajar Braille</h1>
-    <nav>
+    <nav aria-label="Navigasi halaman belajar">
       <ul>
         <li><a href="../index.html">Beranda</a></li>
         <li><a href="reverse.html">Braille ke Teks</a></li>
@@ -21,65 +75,164 @@
 
   <main>
     <!-- Sejarah Braille -->
-    <section aria-labelledby="sejarah-label">
+    <section id="sejarah" aria-labelledby="sejarah-label">
       <h2 id="sejarah-label">Sejarah Braille</h2>
-      <p>Braille dikembangkan oleh Louis Braille pada awal abad ke-19 sebagai sistem membaca dan menulis untuk tunanetra.</p>
+      <p>
+        Pada awal abad ke-19, Louis Braille, seorang tunanetra Prancis,
+        mengembangkan sistem titik timbul yang memungkinkan para tunanetra
+        membaca dan menulis. Sistem ini kemudian dikenal sebagai “Braille”,
+        dan kini telah diadopsi di seluruh dunia untuk segala bahasa.
+      </p>
     </section>
 
-    <!-- Tabel Alfabet Braille -->
-    <section aria-labelledby="alfabet-label">
-      <h2 id="alfabet-label">Alfabet Braille</h2>
-      <table>
+    <!-- Tabel Alfabet A–Z -->
+    <section id="alfabet" aria-labelledby="alfabet-label">
+      <h2 id="alfabet-label">Alfabet Braille (A–Z)</h2>
+      <table class="braille-table" summary="Tabel memetakan huruf A hingga Z ke simbol Braille Unicode">
         <thead>
           <tr>
             <th>Huruf</th>
-            <th>Simbol Braille</th>
+            <th>Unicode</th>
+            <th>Visual</th>
           </tr>
         </thead>
         <tbody>
-          <tr><td>A</td><td>&#x2801;</td></tr>
-          <tr><td>B</td><td>&#x2803;</td></tr>
-          <tr><td>C</td><td>&#x2809;</td></tr>
-          <tr><td>D</td><td>&#x2819;</td></tr>
-          <tr><td>E</td><td>&#x2811;</td></tr>
-          <tr><td>F</td><td>&#x280B;</td></tr>
-          <tr><td>G</td><td>&#x281B;</td></tr>
-          <tr><td>H</td><td>&#x2813;</td></tr>
-          <tr><td>I</td><td>&#x280A;</td></tr>
-          <tr><td>J</td><td>&#x281A;</td></tr>
-          <!-- Tambahkan huruf lainnya sesuai kebutuhan -->
+          <!-- Generate rows A–Z -->
+          <tr><td>A</td><td>&#x2801;</td><td>⠁</td></tr>
+          <tr><td>B</td><td>&#x2803;</td><td>⠃</td></tr>
+          <tr><td>C</td><td>&#x2809;</td><td>⠉</td></tr>
+          <tr><td>D</td><td>&#x2819;</td><td>⠙</td></tr>
+          <tr><td>E</td><td>&#x2811;</td><td>⠑</td></tr>
+          <tr><td>F</td><td>&#x280B;</td><td>⠋</td></tr>
+          <tr><td>G</td><td>&#x281B;</td><td>⠛</td></tr>
+          <tr><td>H</td><td>&#x2813;</td><td>⠓</td></tr>
+          <tr><td>I</td><td>&#x280A;</td><td>⠊</td></tr>
+          <tr><td>J</td><td>&#x281A;</td><td>⠚</td></tr>
+          <tr><td>K</td><td>&#x2805;</td><td>⠅</td></tr>
+          <tr><td>L</td><td>&#x2807;</td><td>⠇</td></tr>
+          <tr><td>M</td><td>&#x280D;</td><td>⠍</td></tr>
+          <tr><td>N</td><td>&#x281D;</td><td>⠝</td></tr>
+          <tr><td>O</td><td>&#x2815;</td><td>⠕</td></tr>
+          <tr><td>P</td><td>&#x280F;</td><td>⠏</td></tr>
+          <tr><td>Q</td><td>&#x281F;</td><td>⠟</td></tr>
+          <tr><td>R</td><td>&#x2817;</td><td>⠗</td></tr>
+          <tr><td>S</td><td>&#x280E;</td><td>⠎</td></tr>
+          <tr><td>T</td><td>&#x281E;</td><td>⠞</td></tr>
+          <tr><td>U</td><td>&#x2825;</td><td>⠥</td></tr>
+          <tr><td>V</td><td>&#x2827;</td><td>⠧</td></tr>
+          <tr><td>W</td><td>&#x283A;</td><td>⠺</td></tr>
+          <tr><td>X</td><td>&#x282D;</td><td>⠭</td></tr>
+          <tr><td>Y</td><td>&#x283D;</td><td>⠽</td></tr>
+          <tr><td>Z</td><td>&#x2835;</td><td>⠵</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Angka & Tanda Baca -->
+    <section id="angka-baca" aria-labelledby="angka-label">
+      <h2 id="angka-label">Angka &amp; Tanda Baca</h2>
+      <table class="braille-table" summary="Tabel memetakan angka dan tanda baca ke simbol Braille Unicode">
+        <thead>
+          <tr>
+            <th>Simbol</th>
+            <th>Unicode</th>
+            <th>Visual</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Number Sign</td><td>&#x283C;</td><td>⠼</td></tr>
+          <tr><td>1</td><td>&#x2801;</td><td>⠁</td></tr>
+          <tr><td>2</td><td>&#x2803;</td><td>⠃</td></tr>
+          <tr><td>3</td><td>&#x2809;</td><td>⠉</td></tr>
+          <tr><td>4</td><td>&#x2819;</td><td>⠙</td></tr>
+          <tr><td>5</td><td>&#x2811;</td><td>⠑</td></tr>
+          <tr><td>6</td><td>&#x280B;</td><td>⠋</td></tr>
+          <tr><td>7</td><td>&#x281B;</td><td>⠛</td></tr>
+          <tr><td>8</td><td>&#x2813;</td><td>⠓</td></tr>
+          <tr><td>9</td><td>&#x280A;</td><td>⠊</td></tr>
+          <tr><td>0</td><td>&#x281A;</td><td>⠚</td></tr>
+          <tr><td>Comma (,)</td><td>&#x2802;</td><td>⠂</td></tr>
+          <tr><td>Period (.)</td><td>&#x2832;</td><td>⠲</td></tr>
+          <tr><td>Question (?)</td><td>&#x2826;</td><td>⠦</td></tr>
+          <tr><td>Exclamation (!)</td><td>&#x2816;</td><td>⠖</td></tr>
+          <tr><td>Colon (:)</td><td>&#x2812;</td><td>⠒</td></tr>
+          <tr><td>Semicolon (;)</td><td>&#x2806;</td><td>⠆</td></tr>
+          <tr><td>Dash (–)</td><td>&#x2824;</td><td>⠤</td></tr>
         </tbody>
       </table>
     </section>
 
     <!-- Cara Membaca Braille -->
-    <section aria-labelledby="cara-label">
+    <section id="cara" aria-labelledby="cara-label">
       <h2 id="cara-label">Cara Membaca Braille</h2>
       <ol>
-        <li>Posisikan ujung jari secara lembut pada permukaan tekstur.</li>
-        <li>Gulir ujung jari dari kiri ke kanan untuk mengenali pola titik.</li>
-        <li>Latih secara rutin untuk meningkatkan kecepatan membaca.</li>
+        <li>Pastikan tangan dan jari bersih, kering, dan rileks.</li>
+        <li>Letakkan ujung jari telunjuk pada baris pertama pola titik.</li>
+        <li>Geser perlahan jari dari kiri ke kanan, merasakan titik demi titik.</li>
+        <li>Berlatih secara rutin untuk meningkatkan ketepatan dan kecepatan.</li>
       </ol>
     </section>
 
     <!-- Kuis Interaktif -->
-    <section aria-labelledby="kuis-label">
-      <h2 id="kuis-label">Kuis Singkat</h2>
-      <p>Cocokkan huruf dengan simbol Braille berikut:</p>
-      <ul>
-        <li>A: ____</li>
-        <li>B: ____</li>
-        <li>C: ____</li>
+    <section id="kuis" aria-labelledby="kuis-label">
+      <h2 id="kuis-label">Kuis Interaktif</h2>
+      <p>Isilah simbol Braille yang benar untuk huruf-huruf berikut:</p>
+      <ul class="quiz-list">
+        <li>
+          A: <input type="text" maxlength="1" data-answer="⠁" aria-label="Jawaban untuk A">
+        </li>
+        <li>
+          C: <input type="text" maxlength="1" data-answer="⠉" aria-label="Jawaban untuk C">
+        </li>
+        <li>
+          Z: <input type="text" maxlength="1" data-answer="⠵" aria-label="Jawaban untuk Z">
+        </li>
       </ul>
-      <p>(Kuis belum interaktif, bisa dikembangkan dengan JavaScript)</p>
+      <button id="check-quiz">Periksa Jawaban</button>
+      <div class="answer-key">
+        <p><strong>Kunci Jawaban:</strong></p>
+        <p>A: ⠁ C: ⠉ Z: ⠵</p>
+      </div>
     </section>
   </main>
 
   <footer>
-    <button id="accessibility-toggle" aria-pressed="false">Mode Aksesibilitas Tinggi</button>
+    <button id="accessibility-toggle" aria-pressed="false" aria-label="Aktifkan mode aksesibilitas tinggi">
+      Mode Aksesibilitas Tinggi
+    </button>
     <p>&copy; 2025 Penerjemah Braille.</p>
   </footer>
 
   <script src="../js/accessibility.js"></script>
+  <script>
+    // learn.js — Logika kuis interaktif
+    document.addEventListener('DOMContentLoaded', () => {
+      const inputs = document.querySelectorAll('.quiz-list input');
+      const checkBtn = document.getElementById('check-quiz');
+      const section = document.getElementById('kuis');
+
+      checkBtn.addEventListener('click', () => {
+        let allCorrect = true;
+        inputs.forEach(input => {
+          const expected = input.getAttribute('data-answer');
+          if (input.value.trim() === expected) {
+            input.classList.add('correct');
+            input.classList.remove('incorrect');
+          } else {
+            input.classList.add('incorrect');
+            input.classList.remove('correct');
+            allCorrect = false;
+          }
+        });
+        // Show answer key if any wrong
+        if (!allCorrect) {
+          section.classList.add('show-key');
+        } else {
+          alert('Selamat! Semua jawaban benar.');
+          section.classList.remove('show-key');
+        }
+      });
+    });
+  </script>
 </body>
 </html>
