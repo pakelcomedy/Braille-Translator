@@ -6,7 +6,7 @@
   <title>Belajar Braille — Penerjemah Braille</title>
   <link rel="stylesheet" href="../css/styles.css">
   <style>
-    /* Additional page‑specific tweaks */
+    /* Page‑specific tweaks */
     table.braille-table {
       width: 100%;
       border-collapse: collapse;
@@ -81,11 +81,11 @@
         Pada awal abad ke-19, Louis Braille, seorang tunanetra Prancis,
         mengembangkan sistem titik timbul yang memungkinkan para tunanetra
         membaca dan menulis. Sistem ini kemudian dikenal sebagai “Braille”,
-        dan kini telah diadopsi di seluruh dunia untuk segala bahasa.
+        dan kini telah diadopsi di seluruh dunia untuk berbagai bahasa.
       </p>
     </section>
 
-    <!-- Tabel Alfabet A–Z -->
+    <!-- Alfabet A–Z -->
     <section id="alfabet" aria-labelledby="alfabet-label">
       <h2 id="alfabet-label">Alfabet Braille (A–Z)</h2>
       <table class="braille-table" summary="Tabel memetakan huruf A hingga Z ke simbol Braille Unicode">
@@ -97,7 +97,6 @@
           </tr>
         </thead>
         <tbody>
-          <!-- Generate rows A–Z -->
           <tr><td>A</td><td>&#x2801;</td><td>⠁</td></tr>
           <tr><td>B</td><td>&#x2803;</td><td>⠃</td></tr>
           <tr><td>C</td><td>&#x2809;</td><td>⠉</td></tr>
@@ -151,10 +150,10 @@
           <tr><td>8</td><td>&#x2813;</td><td>⠓</td></tr>
           <tr><td>9</td><td>&#x280A;</td><td>⠊</td></tr>
           <tr><td>0</td><td>&#x281A;</td><td>⠚</td></tr>
-          <tr><td>Comma (,)</td><td>&#x2802;</td><td>⠂</td></tr>
+          <tr><td>Comma (,) </td><td>&#x2802;</td><td>⠂</td></tr>
           <tr><td>Period (.)</td><td>&#x2832;</td><td>⠲</td></tr>
           <tr><td>Question (?)</td><td>&#x2826;</td><td>⠦</td></tr>
-          <tr><td>Exclamation (!)</td><td>&#x2816;</td><td>⠖</td></tr>
+          <tr><td>Exclamation (!) </td><td>&#x2816;</td><td>⠖</td></tr>
           <tr><td>Colon (:)</td><td>&#x2812;</td><td>⠒</td></tr>
           <tr><td>Semicolon (;)</td><td>&#x2806;</td><td>⠆</td></tr>
           <tr><td>Dash (–)</td><td>&#x2824;</td><td>⠤</td></tr>
@@ -173,66 +172,35 @@
       </ol>
     </section>
 
-    <!-- Kuis Interaktif -->
-    <section id="kuis" aria-labelledby="kuis-label">
-      <h2 id="kuis-label">Kuis Interaktif</h2>
-      <p>Isilah simbol Braille yang benar untuk huruf-huruf berikut:</p>
-      <ul class="quiz-list">
-        <li>
-          A: <input type="text" maxlength="1" data-answer="⠁" aria-label="Jawaban untuk A">
-        </li>
-        <li>
-          C: <input type="text" maxlength="1" data-answer="⠉" aria-label="Jawaban untuk C">
-        </li>
-        <li>
-          Z: <input type="text" maxlength="1" data-answer="⠵" aria-label="Jawaban untuk Z">
-        </li>
-      </ul>
-      <button id="check-quiz">Periksa Jawaban</button>
-      <div class="answer-key">
-        <p><strong>Kunci Jawaban:</strong></p>
-        <p>A: ⠁ C: ⠉ Z: ⠵</p>
-      </div>
-    </section>
+<!-- Kuis Interaktif: Braille → Teks as Grid -->
+<section id="kuis" aria-labelledby="kuis-label">
+    <h2 id="kuis-label">Kuis Interaktif: Braille → Teks</h2>
+    <p>Masukkan huruf Latin (A–Z) untuk setiap simbol Braille:</p>
+  
+    <!-- this empty container will be populated by learn.js -->
+    <div class="quiz-grid"></div>
+  
+    <button id="check-quiz">Periksa Jawaban</button>
+  
+    <div class="answer-key">
+      <p><strong>Kunci Jawaban:</strong></p>
+      <div class="key-grid"></div>
+    </div>
+  </section>
+  
+  <script src="../js/accessibility.js"></script>
+  <script src="../js/learn.js"></script>
+  
+  
   </main>
 
   <footer>
     <button id="accessibility-toggle" aria-pressed="false" aria-label="Aktifkan mode aksesibilitas tinggi">
       Mode Aksesibilitas Tinggi
     </button>
-    <p>&copy; 2025 Penerjemah Braille.</p>
   </footer>
 
   <script src="../js/accessibility.js"></script>
-  <script>
-    // learn.js — Logika kuis interaktif
-    document.addEventListener('DOMContentLoaded', () => {
-      const inputs = document.querySelectorAll('.quiz-list input');
-      const checkBtn = document.getElementById('check-quiz');
-      const section = document.getElementById('kuis');
-
-      checkBtn.addEventListener('click', () => {
-        let allCorrect = true;
-        inputs.forEach(input => {
-          const expected = input.getAttribute('data-answer');
-          if (input.value.trim() === expected) {
-            input.classList.add('correct');
-            input.classList.remove('incorrect');
-          } else {
-            input.classList.add('incorrect');
-            input.classList.remove('correct');
-            allCorrect = false;
-          }
-        });
-        // Show answer key if any wrong
-        if (!allCorrect) {
-          section.classList.add('show-key');
-        } else {
-          alert('Selamat! Semua jawaban benar.');
-          section.classList.remove('show-key');
-        }
-      });
-    });
-  </script>
+  <script src="../js/learn.js"></script>
 </body>
 </html>

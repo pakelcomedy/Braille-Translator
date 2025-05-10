@@ -218,6 +218,51 @@
   .accessibility-high nav ul li a[aria-current="page"] {
     border-bottom-color: var(--color-accent) !important;
   }
+
+  .quiz-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+  }
+  .quiz-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .quiz-item span {
+    font-size: 1.5rem;
+    margin-bottom: 0.25rem;
+  }
+  .quiz-item input {
+    width: 100%;
+    padding: 0.3rem;
+    font-size: 1rem;
+    text-align: center;
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+    transition: border-color var(--transition-speed);
+  }
+  .quiz-item input.correct { border-color: #28a745; }
+  .quiz-item input.incorrect { border-color: #dc3545; }
+  
+  /* answer key grid (same layout) */
+  .answer-key {
+    display: none;
+    margin-top: 1rem;
+  }
+  .answer-key .key-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    gap: 0.5rem;
+  }
+  .answer-key .key-item {
+    font-size: 0.9rem;
+  }
+  .show-key .answer-key {
+    display: block;
+  }
+  
   
   /* ========== Responsive Adjustments ========== */
   @media (max-width: var(--breakpoint-mobile)) {
