@@ -3,42 +3,63 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Braille ke Teks - Penerjemah Braille</title>
+  <title data-i18n="siteTitle">Braille ke Teks – Penerjemah Braille</title>
   <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
   <header>
-    <h1>Penerjemah Braille ke Teks</h1>
-    <nav>
+    <h1 data-i18n="pageBrailleToTextTitle">Penerjemah Braille → Teks</h1>
+    <nav aria-label="Navigasi Utama">
       <ul>
-        <li><a href="../index.html">Beranda</a></li>
-        <li><a href="reverse.html" aria-current="page">Braille ke Teks</a></li>
-        <li><a href="upload.html">Unggah Dokumen</a></li>
-        <li><a href="learn.html">Belajar Braille</a></li>
+        <li><a href="../index.html" data-i18n="navHome">Beranda</a></li>
+        <li><a href="reverse.html" aria-current="page" data-i18n="navTextToBraille">Braille → Teks</a></li>
+        <li><a href="upload.html" data-i18n="navUpload">Unggah Dokumen</a></li>
+        <li><a href="learn.html" data-i18n="navLearn">Belajar Braille</a></li>
       </ul>
     </nav>
   </header>
 
   <main>
     <section aria-labelledby="reverse-input-label">
-      <h2 id="reverse-input-label">Masukkan Braille (Unicode)</h2>
-      <textarea id="braille-input" aria-label="Input Unicode Braille" rows="6" placeholder="⠓⠊..."></textarea>
+<h2 id="reverse-input-label" data-i18n="brailleToTextInputLabel">Masukkan Braille (Unicode)</h2>
+<textarea
+  id="braille-input"
+  aria-label="Input Unicode Braille"
+  rows="6"
+  data-i18n-placeholder="brailleToTextPlaceholder"
+  placeholder="⠓⠊..."
+></textarea>
     </section>
 
     <section aria-labelledby="reverse-output-label">
-      <h2 id="reverse-output-label">Hasil Teks Biasa</h2>
+      <h2 id="reverse-output-label" data-i18n="brailleToTextOutputLabel">Hasil Teks Biasa</h2>
       <div id="text-output" class="output-area" aria-live="polite"></div>
       <div class="output-buttons">
-        <button id="copy-text-btn">Salin</button>
-        <button id="download-text-btn">Unduh</button>
+        <button id="copy-text-btn" data-i18n="btnCopy">Salin</button>
+        <button id="download-text-btn" data-i18n="btnDownload">Unduh</button>
       </div>
     </section>
   </main>
 
   <footer>
-    <button id="accessibility-toggle" aria-pressed="false">Mode Aksesibilitas Tinggi</button>
+    <div class="footer-inner">
+      <button
+        id="accessibility-toggle"
+        aria-pressed="false"
+        data-i18n="accessibilityToggle"
+      >Mode Aksesibilitas Tinggi</button>
+
+      <div class="lang-selector">
+        <label for="langSelector" data-i18n="language">Bahasa</label>
+        <select id="langSelector">
+          <option value="en">English</option>
+          <option value="id" selected>Bahasa Indonesia</option>
+        </select>
+      </div>
+    </div>
   </footer>
 
+  <script src="../js/i18n.js"></script>
   <script src="../js/reverse.js"></script>
   <script src="../js/download.js"></script>
   <script src="../js/accessibility.js"></script>

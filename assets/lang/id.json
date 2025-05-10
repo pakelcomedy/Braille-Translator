@@ -1,0 +1,52 @@
+{
+  "siteTitle": "Penerjemah Braille",
+  "navHome": "Beranda",
+  "navTextToBraille": "Teks ke Braille",
+  "navBrailleToText": "Braille ke Teks",
+  "navUpload": "Unggah Dokumen",
+  "navLearn": "Belajar Braille",
+
+  "pageTextToBrailleTitle": "Penerjemah Teks → Braille",
+  "textToBrailleInputLabel": "Masukkan Teks",
+  "textToBraillePlaceholder": "Tulis teks di sini…",
+  "textToBrailleOutputLabel": "Hasil Konversi",
+  "btnCopy": "Salin",
+  "btnDownload": "Unduh",
+
+  "pageBrailleToTextTitle": "Penerjemah Braille → Teks",
+  "brailleToTextInputLabel": "Masukkan Braille (Unicode)",
+  "brailleToTextPlaceholder": "⠓⠊…",
+  "brailleToTextOutputLabel": "Hasil Teks Biasa",
+
+  "pageUploadTitle": "Unggah Dokumen untuk Diterjemahkan ke Braille",
+  "uploadFileLabel": "Pilih File (.txt atau .pdf)",
+  "uploadNoFile": "No file chosen",
+  "btnProcessDocument": "Proses Dokumen",
+  "uploadOutputLabel": "Hasil Konversi",
+  "btnCopyAll": "Salin Semua",
+  "btnDownloadResult": "Unduh Hasil",
+
+  "accessibilityToggle": "Mode Aksesibilitas Tinggi",
+
+  "pageLearnTitle": "Belajar Braille",
+  "learnHistoryTitle": "Sejarah Braille",
+  "learnHistoryText": "Pada awal abad ke-19, Louis Braille, seorang tunanetra Prancis, mengembangkan sistem titik timbul yang memungkinkan para tunanetra membaca dan menulis. Sistem ini kemudian dikenal sebagai “Braille”, dan kini telah diadopsi di seluruh dunia untuk berbagai bahasa.",
+
+  "learnAlphabetTitle": "Alfabet Braille (A–Z)",
+  "learnNumbersTitle": "Angka & Tanda Baca",
+  "learnReadTitle": "Cara Membaca Braille",
+  "learnReadSteps": [
+    "Pastikan tangan dan jari bersih, kering, dan rileks.",
+    "Letakkan ujung jari telunjuk pada baris pertama pola titik.",
+    "Geser perlahan jari dari kiri ke kanan, merasakan titik demi titik.",
+    "Berlatih secara rutin untuk meningkatkan ketepatan dan kecepatan."
+  ],
+
+  "quizTitle": "Kuis Interaktif: Braille → Teks",
+  "quizInstructions": "Masukkan huruf Latin (A–Z) untuk setiap simbol Braille:",
+  "quizCheck": "Periksa Jawaban",
+  "quizKeyTitle": "Kunci Jawaban:",
+
+  "noFiles": "Tidak ada berkas",
+  "loading": "Memuat..."
+}

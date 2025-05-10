@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Belajar Braille — Penerjemah Braille</title>
+  <title data-i18n="pageLearnTitle">Belajar Braille — Penerjemah Braille</title>
   <link rel="stylesheet" href="../css/styles.css">
   <style>
     /* Page‑specific tweaks */
@@ -62,41 +62,39 @@
 </head>
 <body>
   <header>
-    <h1>Belajar Braille</h1>
+    <h1 data-i18n="pageLearnTitle">Belajar Braille</h1>
     <nav aria-label="Navigasi halaman belajar">
       <ul>
-        <li><a href="../index.html">Beranda</a></li>
-        <li><a href="reverse.html">Braille ke Teks</a></li>
-        <li><a href="upload.html">Unggah Dokumen</a></li>
-        <li><a href="learn.html" aria-current="page">Belajar Braille</a></li>
+        <li><a href="../index.html" data-i18n="navHome">Beranda</a></li>
+        <li><a href="reverse.html" data-i18n="navBrailleToText">Braille ke Teks</a></li>
+        <li><a href="upload.html" data-i18n="navUpload">Unggah Dokumen</a></li>
+        <li><a href="learn.html" aria-current="page" data-i18n="navLearn">Belajar Braille</a></li>
       </ul>
     </nav>
   </header>
 
-  <main>
-    <!-- Sejarah Braille -->
-    <section id="sejarah" aria-labelledby="sejarah-label">
-      <h2 id="sejarah-label">Sejarah Braille</h2>
-      <p>
-        Pada awal abad ke-19, Louis Braille, seorang tunanetra Prancis,
-        mengembangkan sistem titik timbul yang memungkinkan para tunanetra
-        membaca dan menulis. Sistem ini kemudian dikenal sebagai “Braille”,
-        dan kini telah diadopsi di seluruh dunia untuk berbagai bahasa.
-      </p>
-    </section>
+<main>
+  <section id="sejarah" aria-labelledby="sejarah-label">
+    <h2 id="sejarah-label" data-i18n="learnHistoryTitle">Sejarah Braille</h2>
+    <p data-i18n="learnHistoryText">
+      Pada awal abad ke-19, Louis Braille, seorang tunanetra Prancis,
+      mengembangkan sistem titik timbul yang memungkinkan para tunanetra
+      membaca dan menulis. Sistem ini kemudian dikenal sebagai “Braille”,
+      dan kini telah diadopsi di seluruh dunia untuk berbagai bahasa.
+    </p>
+  </section>
 
-    <!-- Alfabet A–Z -->
-    <section id="alfabet" aria-labelledby="alfabet-label">
-      <h2 id="alfabet-label">Alfabet Braille (A–Z)</h2>
-      <table class="braille-table" summary="Tabel memetakan huruf A hingga Z ke simbol Braille Unicode">
-        <thead>
-          <tr>
-            <th>Huruf</th>
-            <th>Unicode</th>
-            <th>Visual</th>
-          </tr>
-        </thead>
-        <tbody>
+  <section id="alfabet" aria-labelledby="alfabet-label">
+    <h2 id="alfabet-label" data-i18n="learnAlphabetTitle">Alfabet Braille (A–Z)</h2>
+    <table class="braille-table" summary="Tabel memetakan huruf A hingga Z ke simbol Braille Unicode">
+      <thead>
+        <tr>
+          <th data-i18n="letter">Huruf</th>
+          <th data-i18n="unicode">Unicode</th>
+          <th data-i18n="visual">Visual</th>
+        </tr>
+      </thead>
+      <tbody>
           <tr><td>A</td><td>&#x2801;</td><td>⠁</td></tr>
           <tr><td>B</td><td>&#x2803;</td><td>⠃</td></tr>
           <tr><td>C</td><td>&#x2809;</td><td>⠉</td></tr>
@@ -123,22 +121,21 @@
           <tr><td>X</td><td>&#x282D;</td><td>⠭</td></tr>
           <tr><td>Y</td><td>&#x283D;</td><td>⠽</td></tr>
           <tr><td>Z</td><td>&#x2835;</td><td>⠵</td></tr>
-        </tbody>
-      </table>
-    </section>
+      </tbody>
+    </table>
+  </section>
 
-    <!-- Angka & Tanda Baca -->
-    <section id="angka-baca" aria-labelledby="angka-label">
-      <h2 id="angka-label">Angka &amp; Tanda Baca</h2>
-      <table class="braille-table" summary="Tabel memetakan angka dan tanda baca ke simbol Braille Unicode">
-        <thead>
-          <tr>
-            <th>Simbol</th>
-            <th>Unicode</th>
-            <th>Visual</th>
-          </tr>
-        </thead>
-        <tbody>
+  <section id="angka-baca" aria-labelledby="angka-label">
+    <h2 id="angka-label" data-i18n="learnNumbersTitle">Angka &amp; Tanda Baca</h2>
+    <table class="braille-table" summary="Tabel memetakan angka dan tanda baca ke simbol Braille Unicode">
+      <thead>
+        <tr>
+          <th data-i18n="symbol">Simbol</th>
+          <th data-i18n="unicode">Unicode</th>
+          <th data-i18n="visual">Visual</th>
+        </tr>
+      </thead>
+      <tbody>
           <tr><td>Number Sign</td><td>&#x283C;</td><td>⠼</td></tr>
           <tr><td>1</td><td>&#x2801;</td><td>⠁</td></tr>
           <tr><td>2</td><td>&#x2803;</td><td>⠃</td></tr>
@@ -157,49 +154,54 @@
           <tr><td>Colon (:)</td><td>&#x2812;</td><td>⠒</td></tr>
           <tr><td>Semicolon (;)</td><td>&#x2806;</td><td>⠆</td></tr>
           <tr><td>Dash (–)</td><td>&#x2824;</td><td>⠤</td></tr>
-        </tbody>
-      </table>
-    </section>
+      </tbody>
+    </table>
+  </section>
 
-    <!-- Cara Membaca Braille -->
-    <section id="cara" aria-labelledby="cara-label">
-      <h2 id="cara-label">Cara Membaca Braille</h2>
-      <ol>
-        <li>Pastikan tangan dan jari bersih, kering, dan rileks.</li>
-        <li>Letakkan ujung jari telunjuk pada baris pertama pola titik.</li>
-        <li>Geser perlahan jari dari kiri ke kanan, merasakan titik demi titik.</li>
-        <li>Berlatih secara rutin untuk meningkatkan ketepatan dan kecepatan.</li>
-      </ol>
-    </section>
+  <section id="cara" aria-labelledby="cara-label">
+    <h2 id="cara-label" data-i18n="learnReadTitle">Cara Membaca Braille</h2>
+    <ol>
+      <li data-i18n="learnReadSteps[0]">Pastikan tangan dan jari bersih, kering, dan rileks.</li>
+      <li data-i18n="learnReadSteps[1]">Letakkan ujung jari telunjuk pada baris pertama pola titik.</li>
+      <li data-i18n="learnReadSteps[2]">Geser perlahan jari dari kiri ke kanan, merasakan titik demi titik.</li>
+      <li data-i18n="learnReadSteps[3]">Berlatih secara rutin untuk meningkatkan ketepatan dan kecepatan.</li>
+    </ol>
+  </section>
 
-<!-- Kuis Interaktif: Braille → Teks as Grid -->
-<section id="kuis" aria-labelledby="kuis-label">
-    <h2 id="kuis-label">Kuis Interaktif: Braille → Teks</h2>
-    <p>Masukkan huruf Latin (A–Z) untuk setiap simbol Braille:</p>
-  
-    <!-- this empty container will be populated by learn.js -->
+  <section id="kuis" aria-labelledby="kuis-label">
+    <h2 id="kuis-label" data-i18n="quizTitle">Kuis Interaktif: Braille → Teks</h2>
+    <p data-i18n="quizInstructions">Masukkan huruf Latin (A–Z) untuk setiap simbol Braille:</p>
     <div class="quiz-grid"></div>
-  
-    <button id="check-quiz">Periksa Jawaban</button>
-  
+    <button id="check-quiz" data-i18n="quizCheck">Periksa Jawaban</button>
     <div class="answer-key">
-      <p><strong>Kunci Jawaban:</strong></p>
+      <p><strong data-i18n="quizKeyTitle">Kunci Jawaban:</strong></p>
       <div class="key-grid"></div>
     </div>
   </section>
-  
-  <script src="../js/accessibility.js"></script>
-  <script src="../js/learn.js"></script>
-  
-  
-  </main>
+</main>
+
 
   <footer>
-    <button id="accessibility-toggle" aria-pressed="false" aria-label="Aktifkan mode aksesibilitas tinggi">
-      Mode Aksesibilitas Tinggi
-    </button>
+    <div class="footer-inner">
+      <button
+        id="accessibility-toggle"
+        aria-pressed="false"
+        data-i18n="accessibilityToggle"
+      >
+        Mode Aksesibilitas Tinggi
+      </button>
+
+      <div class="lang-selector">
+        <label for="langSelector" data-i18n="language">Bahasa</label>
+        <select id="langSelector">
+          <option value="en">English</option>
+          <option value="id" selected>Bahasa Indonesia</option>
+        </select>
+      </div>
+    </div>
   </footer>
 
+  <script src="../js/i18n.js"></script>
   <script src="../js/accessibility.js"></script>
   <script src="../js/learn.js"></script>
 </body>

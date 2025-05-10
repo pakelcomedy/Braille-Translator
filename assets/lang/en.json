@@ -1,0 +1,55 @@
+{
+  "siteTitle": "Braille Translator",
+
+  "navHome": "Home",
+  "navTextToBraille": "Text to Braille",
+  "navBrailleToText": "Braille to Text",
+  "navUpload": "Upload Document",
+  "navLearn": "Learn Braille",
+
+  "pageTextToBrailleTitle": "Text to Braille Translator",
+  "textToBrailleInputLabel": "Enter Text",
+  "textToBraillePlaceholder": "Type your text here...",
+  "textToBrailleOutputLabel": "Conversion Result",
+
+  "pageBrailleToTextTitle": "Braille to Text Translator",
+  "brailleToTextInputLabel": "Enter Braille (Unicode)",
+  "brailleToTextPlaceholder": "⠓⠊...",
+  "brailleToTextOutputLabel": "Plain Text Result",
+
+  "pageUploadTitle": "Upload Document for Braille Conversion",
+  "uploadFileLabel": "Select File (.txt or .pdf)",
+  "uploadNoFile": "No file chosen",
+  "btnProcessDocument": "Process Document",
+  "uploadOutputLabel": "Conversion Result",
+
+  "pageLearnTitle": "Learn Braille",
+  "learnHistoryTitle": "History of Braille",
+  "learnHistoryText": "In the early 19th century, Louis Braille, a blind Frenchman, developed a raised-dot system enabling tactile reading and writing. This Braille system is now used worldwide for many languages.",
+
+  "learnAlphabetTitle": "Braille Alphabet (A–Z)",
+  "learnNumbersTitle": "Numbers & Punctuation",
+  "learnReadTitle": "How to Read Braille",
+  "learnReadSteps": [
+    "Ensure your hands and fingers are clean, dry, and relaxed.",
+    "Place your forefinger lightly at the start of the dot pattern.",
+    "Slide your finger slowly from left to right, feeling each dot.",
+    "Practice regularly to improve accuracy and speed."
+  ],
+
+  "quizTitle": "Interactive Quiz: Braille to Text",
+  "quizInstructions": "Enter the Latin letter (A–Z) for each Braille symbol:",
+  "quizCheck": "Check Answers",
+  "quizKeyTitle": "Answer Key:",
+
+  "btnCopy": "Copy",
+  "btnDownload": "Download",
+  "btnCopyAll": "Copy All",
+  "btnDownloadResult": "Download Result",
+
+  "accessibilityToggle": "High Accessibility Mode",
+  "language": "Language",
+
+  "noFiles": "No files available",
+  "loading": "Loading..."
+}

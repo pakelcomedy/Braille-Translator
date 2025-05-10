@@ -3,57 +3,69 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Penerjemah Braille</title>
+  <title data-i18n="siteTitle">Penerjemah Braille</title>
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
   <header>
-    <h1>Penerjemah Teks ke Braille</h1>
-    <nav>
+    <h1 data-i18n="pageTextToBrailleTitle">Penerjemah Teks → Braille</h1>
+    <nav aria-label="Navigasi Utama">
       <ul>
-        <li><a href="index.html" aria-current="page">Beranda</a></li>
-        <li><a href="pages/reverse.html">Braille ke Teks</a></li>
-        <li><a href="pages/upload.html">Unggah Dokumen</a></li>
-        <li><a href="pages/learn.html">Belajar Braille</a></li>
+        <li><a href="index.html" aria-current="page" data-i18n="navHome">Beranda</a></li>
+        <li><a href="pages/reverse.html" data-i18n="navTextToBraille">Braille → Teks</a></li>
+        <li><a href="pages/upload.html" data-i18n="navUpload">Unggah Dokumen</a></li>
+        <li><a href="pages/learn.html" data-i18n="navLearn">Belajar Braille</a></li>
       </ul>
     </nav>
   </header>
 
   <main>
     <section aria-labelledby="input-label">
-      <h2 id="input-label">Masukkan Teks</h2>
+      <h2 id="input-label" data-i18n="textToBrailleInputLabel">Masukkan Teks</h2>
       <textarea
         id="text-input"
         aria-label="Input teks biasa"
         rows="6"
-        placeholder="Tulis teks di sini..."
+        data-i18n-placeholder="textToBraillePlaceholder"
+        placeholder="Tulis teks di sini…"
       ></textarea>
     </section>
 
     <section aria-labelledby="output-label">
-      <h2 id="output-label">Hasil Konversi</h2>
+      <h2 id="output-label" data-i18n="textToBrailleOutputLabel">Hasil Konversi</h2>
       <div
         id="braille-output"
         class="output-area"
         aria-live="polite"
       ></div>
       <div class="output-buttons">
-        <button id="copy-btn">Salin</button>
-        <button id="download-btn">Unduh</button>
+        <button id="copy-btn" data-i18n="btnCopy">Salin</button>
+        <button id="download-btn" data-i18n="btnDownload">Unduh</button>
       </div>
     </section>
   </main>
 
   <footer>
-    <button
-      id="accessibility-toggle"
-      aria-pressed="false"
-      aria-label="Aktifkan mode aksesibilitas tinggi"
-    >
-      Mode Aksesibilitas Tinggi
-    </button>
+    <div class="footer-inner">
+      <button
+        id="accessibility-toggle"
+        aria-pressed="false"
+        data-i18n="accessibilityToggle"
+      >
+        Mode Aksesibilitas Tinggi
+      </button>
+
+      <div class="lang-selector">
+        <label for="langSelector" data-i18n="language">Bahasa</label>
+        <select id="langSelector">
+          <option value="en">English</option>
+          <option value="id" selected>Bahasa Indonesia</option>
+        </select>
+      </div>
+    </div>
   </footer>
 
+  <script src="js/i18n.js"></script>
   <script src="js/convert.js"></script>
   <script src="js/download.js"></script>
   <script src="js/accessibility.js"></script>
