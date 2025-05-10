@@ -154,7 +154,6 @@
   }
   #copy-btn:hover,
   #copy-btn:focus {
-    /* filter darkens by 10% without changing your original vars */
     filter: brightness(0.9);
   }
   
@@ -172,18 +171,52 @@
   
   /* ========== Accessibility ‑ High Mode ========== */
   .accessibility-high {
-    background-color: #000000 !important;
-    color: #ffffff !important;
+    /* page-wide */
+    background-color: #000 !important;
+    color: #fff !important;
     font-size: 1.25rem !important;
   }
-  .accessibility-high textarea,
-  .accessibility-high .output-area {
-    border-color: #ffffff !important;
+  
+  /* ensure containers invert properly */
+  .accessibility-high header,
+  .accessibility-high nav,
+  .accessibility-high main,
+  .accessibility-high footer {
+    background-color: #000 !important;
+    color: #fff !important;
+    border-color: #fff !important;
   }
-  .accessibility-high button,
+  
+  /* links in high mode use accent for clarity */
+  .accessibility-high a {
+    color: var(--color-accent) !important;
+  }
+  .accessibility-high a:hover,
+  .accessibility-high a:focus {
+    color: #ff8c1a !important; /* slightly lighter accent */
+  }
+  
+  /* form fields & output area */
+  .accessibility-high textarea,
+  .accessibility-high .output-area,
   .accessibility-high select,
   .accessibility-high input {
-    outline: 3px solid #ffea00;
+    background-color: #000 !important;
+    color: #fff !important;
+    border-color: #fff !important;
+    outline: 3px solid #ffea00 !important;
+  }
+  
+  /* buttons */
+  .accessibility-high button {
+    background-color: var(--color-primary) !important;
+    color: #fff !important;
+    outline: 3px solid #ffea00 !important;
+  }
+  
+  /* current page indicator */
+  .accessibility-high nav ul li a[aria-current="page"] {
+    border-bottom-color: var(--color-accent) !important;
   }
   
   /* ========== Responsive Adjustments ========== */
