@@ -1,16 +1,19 @@
-/* styles.css - Gaya umum untuk seluruh halaman Penerjemah Braille */
+/* ==========================================================================
+   styles.css - Gaya umum untuk seluruh halaman Penerjemah Braille
+   ========================================================================== */
 
 /* ========== Root & Variables ========== */
 :root {
   --color-bg: #f9f9f9;
-  --color-text: #333333;
+  --color-text: #333;
   --color-primary: #0066cc;
   --color-primary-hover: #005bb5;
   --color-accent: #ff6600;
-  --color-border: #dddddd;
+  --color-border: #ddd;
   --font-family-base: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   --transition-speed: 0.2s;
   --breakpoint-mobile: 600px;
+  --focus-outline: 3px solid #ffea00;
 }
 
 /* ========== Base Reset & Typography ========== */
@@ -20,7 +23,7 @@
   box-sizing: border-box;
 }
 html {
-  font-size: 100%; /* 16px */
+  font-size: 100%;
 }
 body {
   font-family: var(--font-family-base);
@@ -44,28 +47,26 @@ a:focus {
   color: var(--color-primary-hover);
 }
 
-/* ========== Header & Footer Shared ========== */
+/* ========== Header & Footer ========== */
 header,
 footer {
-  background-color: #ffffff;
+  background-color: #fff;
   border-color: var(--color-border);
   padding: 1rem 2rem;
 }
 header {
-  border-bottom-style: solid;
-  border-bottom-width: 1px;
+  border-bottom: 1px solid var(--color-border);
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
 }
 footer {
-  border-top-style: solid;
-  border-top-width: 1px;
+  border-top: 1px solid var(--color-border);
   margin-top: auto;
 }
 
-/* ========== Header & Navigation ========== */
+/* ========== Navigation ========== */
 header h1 {
   font-size: 1.75rem;
 }
@@ -97,12 +98,16 @@ section h2 {
 }
 
 /* ========== Form Elements & Output ========== */
-textarea {
+textarea,
+select,
+input {
   width: 100%;
   padding: 0.75rem;
   border: 1px solid var(--color-border);
   border-radius: 4px;
   font-size: 1rem;
+}
+textarea {
   resize: vertical;
   min-height: 150px;
 }
@@ -112,7 +117,7 @@ textarea {
   padding: 1rem;
   border: 1px dashed var(--color-border);
   border-radius: 4px;
-  background-color: #ffffff;
+  background-color: #fff;
   margin-bottom: 1rem;
   white-space: pre-wrap;
   word-wrap: break-word;
@@ -121,21 +126,15 @@ textarea {
 /* ========== Controls & Buttons ========== */
 .controls {
   display: flex;
-  align-items: center;
+  flex-wrap: wrap;
   gap: 0.5rem;
   margin-top: 1rem;
-  flex-wrap: wrap;
-}
-select {
-  padding: 0.5rem;
-  border: 1px solid var(--color-border);
-  border-radius: 4px;
-  font-size: 1rem;
+  align-items: center;
 }
 .output-buttons {
   display: flex;
-  gap: 1rem;
   flex-wrap: wrap;
+  gap: 1rem;
 }
 button {
   padding: 0.6rem 1.2rem;
@@ -143,15 +142,15 @@ button {
   border-radius: 4px;
   cursor: pointer;
   font-size: 1rem;
-  transition: background-color var(--transition-speed), filter var(--transition-speed);
   background-color: var(--color-primary);
-  color: #ffffff;
+  color: #fff;
+  transition: background-color var(--transition-speed), filter var(--transition-speed);
 }
 button:hover,
 button:focus {
   background-color: var(--color-primary-hover);
+  outline: none;
 }
-
 #copy-btn {
   background-color: var(--color-accent);
 }
@@ -160,7 +159,7 @@ button:focus {
   filter: brightness(0.9);
 }
 
-/* ========== Accessibility Toggle Button ========== */
+/* ========== Accessibility Toggle ========== */
 #accessibility-toggle {
   background-color: transparent;
   color: var(--color-primary);
@@ -169,7 +168,7 @@ button:focus {
 }
 #accessibility-toggle[aria-pressed="true"] {
   background-color: var(--color-primary);
-  color: #ffffff;
+  color: #fff;
 }
 
 /* ========== Accessibility-High Mode ========== */
@@ -178,10 +177,7 @@ button:focus {
   color: #fff !important;
   font-size: 1.25rem !important;
 }
-.accessibility-high header,
-.accessibility-high nav,
-.accessibility-high main,
-.accessibility-high footer {
+.accessibility-high :where(header, nav, main, footer) {
   background-color: #000 !important;
   color: #fff !important;
   border-color: #fff !important;
@@ -193,29 +189,27 @@ button:focus {
 .accessibility-high a:focus {
   color: #ff8c1a !important;
 }
-.accessibility-high textarea,
-.accessibility-high .output-area,
-.accessibility-high select,
-.accessibility-high input {
+.accessibility-high :where(textarea, .output-area, select, input) {
   background-color: #000 !important;
   color: #fff !important;
   border-color: #fff !important;
-  outline: 3px solid #ffea00 !important;
+  outline: var(--focus-outline) !important;
 }
 .accessibility-high button {
   background-color: var(--color-primary) !important;
   color: #fff !important;
-  outline: 3px solid #ffea00 !important;
+  outline: var(--focus-outline) !important;
 }
 .accessibility-high nav ul li a[aria-current="page"] {
   border-bottom-color: var(--color-accent) !important;
 }
 
-/* ========== Quiz Styles (Learn Braille) ========== */
-.quiz-grid {
+/* ========== Quiz Styles ========== */
+.quiz-grid,
+.answer-key .key-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
   gap: 0.75rem;
+  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
   margin-bottom: 1rem;
 }
 .quiz-item {
@@ -228,24 +222,18 @@ button:focus {
   margin-bottom: 0.25rem;
 }
 .quiz-item input {
-  width: 100%;
-  padding: 0.3rem;
-  font-size: 1rem;
   text-align: center;
-  border: 1px solid var(--color-border);
-  border-radius: 4px;
   transition: border-color var(--transition-speed);
 }
-.quiz-item input.correct { border-color: #28a745; }
-.quiz-item input.incorrect { border-color: #dc3545; }
+.quiz-item input.correct {
+  border-color: #28a745;
+}
+.quiz-item input.incorrect {
+  border-color: #dc3545;
+}
 .answer-key {
   display: none;
   margin-top: 1rem;
-}
-.answer-key .key-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
-  gap: 0.5rem;
 }
 .answer-key .key-item {
   font-size: 0.9rem;
@@ -254,68 +242,53 @@ button:focus {
   display: block;
 }
 
+/* ========== Footer Layout ========== */
 .footer-inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 1rem;
-  padding: 1rem 0;
-  border-top: 1px solid var(--color-border);
+  padding: 1rem 2rem;
 }
-
-.footer-inner #accessibility-toggle {
-  flex: 0 0 auto;       /* don’t grow or shrink */
-  min-width: 0;         /* allow it to shrink below its flex-basis if needed */
-  max-width: 200px;     /* optional: cap its width so it never gets too wide */
-}
-
-.footer-inner .lang-selector {
+.footer-left,
+.footer-right {
   display: flex;
-  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.footer-left #accessibility-toggle {
+  font-size: 0.95rem;
+  padding: 0.5rem 1rem;
+}
+.footer-left .lang-selector {
+  display: flex;
   align-items: center;
   gap: 0.5rem;
-  font-size: 0.95rem;
 }
-
-.footer-inner .lang-selector label {
+.footer-left .lang-selector label {
+  font-size: 0.95rem;
   font-weight: 500;
 }
-
-.footer-inner .lang-selector select {
+.footer-left .lang-selector select {
   padding: 0.4rem 0.6rem;
   font-size: 0.95rem;
-  border-radius: 4px;
-  border: 1px solid var(--color-border);
 }
-
-/* Perbaikan tombol toggle aksesibilitas di footer */
-#accessibility-toggle {
-  padding: 0.5rem 1rem;
+.footer-right a {
+  padding: 0.4rem 0.8rem;
   font-size: 0.95rem;
-  border-radius: 4px;
-  background-color: transparent;
   border: 1px solid var(--color-primary);
+  border-radius: 4px;
   color: var(--color-primary);
-  transition: all var(--transition-speed);
+  transition: background-color var(--transition-speed), color var(--transition-speed);
 }
-
-#accessibility-toggle:hover,
-#accessibility-toggle:focus {
+.footer-right a:hover,
+.footer-right a:focus {
   background-color: var(--color-primary);
-  color: white;
+  color: #fff;
 }
 
-/* Responsive untuk footer */
-@media (max-width: var(--breakpoint-mobile)) {
-  .footer-inner {
-    flex-direction: column;
-    align-items: center;
-    gap: 0.75rem;
-  }
-}
-
-/* ========== Responsive Adjustments ========== */
+/* ========== Responsive Styles ========== */
 @media (max-width: var(--breakpoint-mobile)) {
   header,
   footer {
@@ -349,5 +322,17 @@ button:focus {
     flex-direction: column;
     gap: 1rem;
     text-align: center;
+  }
+  .footer-left,
+  .footer-right {
+    width: 100%;
+    justify-content: center;
+  }
+  .footer-left {
+    order: 1;
+  }
+  .footer-right {
+    order: 2;
+    margin-top: 1rem;
   }
 }
