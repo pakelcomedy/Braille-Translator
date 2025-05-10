@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Penerjemah Braille</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Penerjemah Teks ke Braille</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html" aria-current="page">Beranda</a></li>
+        <li><a href="pages/reverse.html">Braille ke Teks</a></li>
+        <li><a href="pages/upload.html">Unggah Dokumen</a></li>
+        <li><a href="pages/learn.html">Belajar Braille</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section aria-labelledby="input-label">
+      <h2 id="input-label">Masukkan Teks</h2>
+      <textarea id="text-input" aria-label="Input teks biasa" rows="6" placeholder="Tulis teks di sini..."></textarea>
+
+      <div class="controls">
+        <label for="mode-select">Mode Output:</label>
+        <select id="mode-select">
+          <option value="unicode">Braille Unicode</option>
+          <option value="dots">Gambar Titik Braille</option>
+          <option value="6dot">6-dot CSS Grid</option>
+        </select>
+      </div>
+    </section>
+
+    <section aria-labelledby="output-label">
+      <h2 id="output-label">Hasil Konversi</h2>
+      <div id="braille-output" class="output-area" aria-live="polite"></div>
+      <div class="output-buttons">
+        <button id="copy-btn">Salin</button>
+        <button id="download-btn">Unduh</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <button id="accessibility-toggle" aria-pressed="false">
+      Mode Aksesibilitas Tinggi
+    </button>
+    <p>&copy; 2025 Penerjemah Braille. Dibuat dengan ❤️ untuk aksesibilitas.</p>
+  </footer>
+
+  <script src="js/convert.js"></script>
+  <script src="js/download.js"></script>
+  <script src="js/accessibility.js"></script>
+</body>
+</html>

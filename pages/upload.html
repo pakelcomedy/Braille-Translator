@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Unggah Dokumen - Penerjemah Braille</title>
+  <link rel="stylesheet" href="../css/styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Unggah Dokumen untuk Diterjemahkan ke Braille</h1>
+    <nav>
+      <ul>
+        <li><a href="../index.html">Beranda</a></li>
+        <li><a href="reverse.html">Braille ke Teks</a></li>
+        <li><a href="upload.html" aria-current="page">Unggah Dokumen</a></li>
+        <li><a href="learn.html">Belajar Braille</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section aria-labelledby="upload-label">
+      <h2 id="upload-label">Pilih File (.txt atau .pdf)</h2>
+      <input type="file" id="file-input" accept=".txt,application/pdf" />
+      <button id="process-btn">Proses Dokumen</button>
+    </section>
+
+    <section aria-labelledby="result-label">
+      <h2 id="result-label">Hasil Konversi</h2>
+      <div id="file-output" class="output-area" aria-live="polite">
+        <!-- Hasil teks dokumen dan konversi Braille akan muncul di sini -->
+      </div>
+      <div class="output-buttons">
+        <button id="copy-file-btn">Salin Semua</button>
+        <button id="download-file-btn">Unduh Hasil</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <button id="accessibility-toggle" aria-pressed="false">
+      Mode Aksesibilitas Tinggi
+    </button>
+    <p>&copy; 2025 Penerjemah Braille.</p>
+  </footer>
+
+  <script src="../js/upload.js"></script>
+  <script src="../js/convert.js"></script>
+  <script src="../js/download.js"></script>
+  <script src="../js/accessibility.js"></script>
+</body>
+</html>
