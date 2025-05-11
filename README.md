@@ -13,7 +13,7 @@ A simple and accessible web-based Braille translation tool. This project allows 
 ## 🌐 Live Demo
 
 ```
-https://pakelcomedy.github.io/Braille-Translator/
+t2b.my.id
 ```
 
 ---
