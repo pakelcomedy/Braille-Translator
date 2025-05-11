@@ -1,46 +1,46 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title data-i18n="siteTitle">Penerjemah Braille</title>
+  <title data-i18n="siteTitle">Braille Translator</title>
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
   <header>
-    <h1 data-i18n="pageTextToBrailleTitle">Penerjemah Teks → Braille</h1>
-    <nav aria-label="Navigasi Utama">
+    <h1 data-i18n="pageTextToBrailleTitle">Text → Braille Translator</h1>
+    <nav aria-label="Main Navigation">
       <ul>
-        <li><a href="index.html" aria-current="page" data-i18n="navHome">Beranda</a></li>
-        <li><a href="pages/reverse.html" data-i18n="navTextToBraille">Braille → Teks</a></li>
-        <li><a href="pages/upload.html" data-i18n="navUpload">Unggah Dokumen</a></li>
-        <li><a href="pages/learn.html" data-i18n="navLearn">Belajar Braille</a></li>
+        <li><a href="index.html" aria-current="page" data-i18n="navHome">Home</a></li>
+        <li><a href="pages/reverse.html" data-i18n="navTextToBraille">Braille → Text</a></li>
+        <li><a href="pages/upload.html" data-i18n="navUpload">Upload Document</a></li>
+        <li><a href="pages/learn.html" data-i18n="navLearn">Learn Braille</a></li>
       </ul>
     </nav>
   </header>
 
   <main>
     <section aria-labelledby="input-label">
-      <h2 id="input-label" data-i18n="textToBrailleInputLabel">Masukkan Teks</h2>
+      <h2 id="input-label" data-i18n="textToBrailleInputLabel">Enter Text</h2>
       <textarea
         id="text-input"
-        aria-label="Input teks biasa"
+        aria-label="Plain text input"
         rows="6"
         data-i18n-placeholder="textToBraillePlaceholder"
-        placeholder="Tulis teks di sini…"
+        placeholder="Type your text here…"
       ></textarea>
     </section>
 
     <section aria-labelledby="output-label">
-      <h2 id="output-label" data-i18n="textToBrailleOutputLabel">Hasil Konversi</h2>
+      <h2 id="output-label" data-i18n="textToBrailleOutputLabel">Conversion Result</h2>
       <div
         id="braille-output"
         class="output-area"
         aria-live="polite"
       ></div>
       <div class="output-buttons">
-        <button id="copy-btn" data-i18n="btnCopy">Salin</button>
-        <button id="download-btn" data-i18n="btnDownload">Unduh</button>
+        <button id="copy-btn" data-i18n="btnCopy">Copy</button>
+        <button id="download-btn" data-i18n="btnDownload">Download</button>
       </div>
     </section>
   </main>
@@ -52,14 +52,14 @@
         aria-pressed="false"
         data-i18n="accessibilityToggle"
       >
-        Mode Aksesibilitas Tinggi
+        High Accessibility Mode
       </button>
 
       <div class="lang-selector">
-        <label for="langSelector" data-i18n="language">Bahasa</label>
+        <label for="langSelector" data-i18n="language">Language</label>
         <select id="langSelector">
-          <option value="en">English</option>
-          <option value="id" selected>Bahasa Indonesia</option>
+          <option value="en" selected>English</option>
+          <option value="id">Bahasa Indonesia</option>
         </select>
       </div>
     </div>

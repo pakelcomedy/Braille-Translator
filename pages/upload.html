@@ -1,40 +1,44 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title data-i18n="pageUploadTitle">Unggah Dokumen - Penerjemah Braille</title>
+  <title data-i18n="pageUploadTitle">Upload Document – Braille Translator</title>
   <link rel="stylesheet" href="../css/styles.css" />
 </head>
 <body>
   <header>
-    <h1 data-i18n="pageUploadTitle">Unggah Dokumen untuk Diterjemahkan ke Braille</h1>
+    <h1 data-i18n="pageUploadTitle">Upload Document to Translate into Braille</h1>
     <nav>
       <ul>
-        <li><a href="../index.html" data-i18n="navHome">Beranda</a></li>
-        <li><a href="reverse.html" data-i18n="navBrailleToText">Braille ke Teks</a></li>
-        <li><a href="upload.html" aria-current="page" data-i18n="navUpload">Unggah Dokumen</a></li>
-        <li><a href="learn.html" data-i18n="navLearn">Belajar Braille</a></li>
+        <li><a href="../index.html" data-i18n="navHome">Home</a></li>
+        <li><a href="reverse.html" data-i18n="navBrailleToText">Braille → Text</a></li>
+        <li><a href="upload.html" aria-current="page" data-i18n="navUpload">Upload Document</a></li>
+        <li><a href="learn.html" data-i18n="navLearn">Learn Braille</a></li>
       </ul>
     </nav>
   </header>
 
   <main>
     <section aria-labelledby="upload-label">
-      <h2 id="upload-label" data-i18n="uploadFileLabel">Pilih File (.txt atau .pdf)</h2>
-      <input type="file" id="file-input" accept=".txt,application/pdf" aria-label="Unggah File" />
-<button id="process-btn" data-i18n="btnProcessDocument">Proses Dokumen</button>
-
+      <h2 id="upload-label" data-i18n="uploadFileLabel">Select File (.txt or .pdf)</h2>
+      <input
+        type="file"
+        id="file-input"
+        accept=".txt,application/pdf"
+        aria-label="Upload File"
+      />
+      <button id="process-btn" data-i18n="btnProcessDocument">Process Document</button>
     </section>
 
     <section aria-labelledby="result-label">
-      <h2 id="result-label" data-i18n="uploadOutputLabel">Hasil Konversi</h2>
+      <h2 id="result-label" data-i18n="uploadOutputLabel">Conversion Result</h2>
       <div id="file-output" class="output-area" aria-live="polite">
-        <!-- Hasil teks dokumen dan konversi Braille akan muncul di sini -->
+        <!-- The extracted text and Braille conversion will appear here -->
       </div>
       <div class="output-buttons">
-        <button id="copy-file-btn" data-i18n="btnCopyAll">Salin Semua</button>
-        <button id="download-file-btn" data-i18n="btnDownloadResult">Unduh Hasil</button>
+        <button id="copy-file-btn" data-i18n="btnCopyAll">Copy All</button>
+        <button id="download-file-btn" data-i18n="btnDownloadResult">Download Result</button>
       </div>
     </section>
   </main>
@@ -46,14 +50,14 @@
         aria-pressed="false"
         data-i18n="accessibilityToggle"
       >
-        Mode Aksesibilitas Tinggi
+        High Accessibility Mode
       </button>
 
       <div class="lang-selector">
-        <label for="langSelector" data-i18n="language">Bahasa</label>
+        <label for="langSelector" data-i18n="language">Language</label>
         <select id="langSelector">
-          <option value="en">English</option>
-          <option value="id" selected>Bahasa Indonesia</option>
+          <option value="en" selected>English</option>
+          <option value="id">Bahasa Indonesia</option>
         </select>
       </div>
     </div>
