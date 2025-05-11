@@ -2,7 +2,7 @@
 (() => {
   const DEFAULT_LANG = 'en';
   const STORAGE_KEY  = 'lang';
-  const DICT_FOLDER  = 'assets/lang/';      // ← ensure trailing slash
+  const DICT_FOLDER  = '/assets/lang/';      // ← ensure trailing slash
   const DATA_ATTR    = 'data-i18n';
   const PLACEHOLDER  = 'data-i18n-placeholder';
 
