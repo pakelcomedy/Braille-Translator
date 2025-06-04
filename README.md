@@ -12,9 +12,7 @@ A simple and accessible web-based Braille translation tool. This project allows 
 
 ## 🌐 Live Demo
 
-```
-t2b.my.id
-```
+[Text To Braille](./t2b.my.id)
 
 ---
 
