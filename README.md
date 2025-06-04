@@ -64,12 +64,14 @@ braille-translator-website/
 ---
 
 ## 📷 Screenshot
+
 ![Screenshot (260)](https://github.com/user-attachments/assets/53eb5f91-3447-4c25-940c-80027757304e)
 ![Screenshot (261)](https://github.com/user-attachments/assets/515ebe62-5d88-4a94-9aae-5bd6e709dc18)
 ![Screenshot (262)](https://github.com/user-attachments/assets/3858cf92-2fb8-452a-94fa-c3a9eb3d02e4)
 ![Screenshot (263)](https://github.com/user-attachments/assets/fe704a7f-c18a-4db7-855f-9160296fbdd6)
 ![Screenshot (264)](https://github.com/user-attachments/assets/5d45c957-c7b7-4ba8-9680-93ee5abb56d4)
 ![Screenshot (265)](https://github.com/user-attachments/assets/684e6b24-cc77-4ea7-ae80-7b13268b59ef)
+
 ---
 
 ## 📦 Setup & Usage
@@ -78,10 +80,11 @@ No build tools or frameworks required.
 Simply clone or download the repository, then open `index.html` (and other HTML files in `pages/`) in a modern browser. For best results, host via GitHub Pages or Netlify.
 
 1. **Clone the repo**  
-   ```bash
-   git clone https://github.com/your-username/braille-translator-website.git
+
+```
+   git clone https://github.com/pakelcomedy/Braille-Translator.git
    cd braille-translator-website
-````
+```
 
 2. **Open in Browser**
 
@@ -132,4 +135,4 @@ Pull requests are welcome! For major changes or feature requests, please open an
 
 Inspired by the need for accessible learning tools for the visually impaired. Built with ❤️ using HTML, CSS, and JavaScript.
 
-```
+---
